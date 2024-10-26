@@ -30,7 +30,7 @@ export default function SearchDialog() {
                             color="white"
                             type="search"
                             label="Type here..."
-                            className=" bg-[#2C3A47]"
+                            className=" bg-[#2C3A47] text-white"
                             name="searchkey"
                             containerProps={{
                                 className: "min-w-[288px]",
@@ -56,7 +56,7 @@ export default function SearchDialog() {
 
                     {/* Heading  */}
                     <div className=" text-center">
-                        <h1 className=" text-gray-600">Powered By Devknus</h1>
+                        <h1 className="text-white">Powered By quickblog</h1>
                     </div>
                 </DialogBody>
             </Dialog>
