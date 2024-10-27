@@ -1,12 +1,4 @@
 import React, { useContext, useState } from 'react';
-import {
-    Card,
-    CardHeader,
-    CardBody,
-    Input,
-    Button,
-    Typography,
-} from '@material-tailwind/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import myContext from '../../../context/data/myContext';
@@ -33,7 +25,14 @@ const UserProfileWithLogin = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-teal-700 bg-opacity-50">
+        <div
+            className="flex items-center justify-center min-h-screen"
+            style={{
+                backgroundImage: "url('https://mailrelay.com/wp-content/uploads/2018/03/que-es-un-blog-1.png')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}
+        >
             <div className="bg-teal-900 bg-opacity-75 p-10 rounded-lg text-white w-96">
                 <h1 className="text-4xl font-bold">Aditya Ghodki</h1>
                 <p className="mt-2 text-lg">Imagine, Explore, Create</p>
@@ -54,59 +53,32 @@ const UserProfileWithLogin = () => {
                     <a href="#" className="block border-b border-white pb-2">Your contact</a>
                 </div>
 
-                <Card
-                    className="mt-6"
-                    style={{
-                        background: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)',
-                    }}
-                >
-                    <CardHeader
-                        color="blue"
-                        className="m-0 grid place-items-center rounded-b-none py-8 px-4 text-center"
-                        style={{
-                            background: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
-                        }}
+                <form className="mt-6 flex flex-col gap-4" onSubmit={handleSubmit}>
+                    {error && <div className="text-red-500">{error}</div>}
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="bg-teal-800 text-white placeholder-gray-300 p-2 rounded"
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="bg-teal-800 text-white placeholder-gray-300 p-2 rounded"
+                        required
+                    />
+                    <button
+                        type="submit"
+                        className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded"
                     >
-                        <Typography
-                            variant="h4"
-                            style={{
-                                color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)',
-                            }}
-                        >
-                            Admin Login
-                        </Typography>
-                    </CardHeader>
-
-                    <CardBody>
-                        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-                            {error && <div className="text-red-500">{error}</div>}
-                            <Input
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                            <Input
-                                type="password"
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                            <Button
-                                type="submit"
-                                style={{
-                                    background: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
-                                    color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)',
-                                }}
-                            >
-                                Login
-                            </Button>
-                        </form>
-                    </CardBody>
-                </Card>
+                        Login
+                    </button>
+                </form>
             </div>
         </div>
     );
