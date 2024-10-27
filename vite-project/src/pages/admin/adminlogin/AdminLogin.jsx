@@ -62,15 +62,16 @@ export default function AdminLogin() {
                         <div>
                             <Input
                                 type="email"
-                                label="Email"
                                 name="email"
+                                placeholder="Email"
+                                className="items-center"
                             />
                         </div>
                         {/* Second Input  */}
                         <div>
                             <Input
                                 type="password"
-                                label="Password"
+                                placeholder="Password"
                             />
                         </div>
                         {/* Login Button  */}
