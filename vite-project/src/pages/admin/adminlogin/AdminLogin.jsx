@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle, faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import myContext from '../../../context/data/myContext';
 
 const UserProfileWithLogin = () => {
@@ -34,11 +34,11 @@ const UserProfileWithLogin = () => {
             }}
         >
             <div className="bg-teal-900 bg-opacity-75 p-10 rounded-lg text-white w-96">
-                <h1 className="text-4xl font-bold">Aditya Ghodki</h1>
-                <p className="mt-2 text-lg">Imagine, Explore, Create</p>
-                <div className="flex space-x-4 mt-4">
+                <h1 className="text-4xl font-bold text-center">BlogAlchemy</h1>
+                <p className="mt-2 text-lg text-center">Imagine, Explore, Create</p>
+                <div className="flex justify-center space-x-4 mt-4">
                     <a href="#" className="text-white text-2xl">
-                        <FontAwesomeIcon icon={faInstagram} />
+                        <FontAwesomeIcon icon={faGoogle} />
                     </a>
                     <a href="#" className="text-white text-2xl">
                         <FontAwesomeIcon icon={faFacebookF} />
@@ -48,13 +48,12 @@ const UserProfileWithLogin = () => {
                     </a>
                 </div>
                 <div className="mt-8 space-y-4">
-                    <a href="#" className="block border-b border-white pb-2">Bio</a>
-                    <a href="#" className="block border-b border-white pb-2">Start a Blog</a>
-                    <a href="#" className="block border-b border-white pb-2">Your contact</a>
+                    <a href="#" className="block border-b border-white pb-2 text-center">Name</a>
+                    <a href="#" className="block border-b border-white pb-2 text-center">Your contact</a>
                 </div>
 
                 <form className="mt-6 flex flex-col gap-4" onSubmit={handleSubmit}>
-                    {error && <div className="text-red-500">{error}</div>}
+                    {error && <div className="text-red-500 text-center">{error}</div>}
                     <input
                         type="email"
                         name="email"
