@@ -39,12 +39,6 @@ export default function AdminLogin() {
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setError('');
-        login();
-    };
-
     return (
         <div
             className="flex items-center justify-center min-h-screen"
@@ -78,7 +72,7 @@ export default function AdminLogin() {
                 </CardHeader>
 
                 <CardBody>
-                    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                    <form className="flex flex-col gap-4" onSubmit={(e) => { e.preventDefault(); login(); }}>
                         {error && <Typography color="red" className="text-center">{error}</Typography>}
                         <Input
                             type="email"
@@ -99,7 +93,6 @@ export default function AdminLogin() {
                         <Button
                             type="submit"
                             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded"
-                            onClick={login}
                             style={{
                                 backgroundColor: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
                                 color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)'
