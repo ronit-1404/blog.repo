@@ -1,7 +1,237 @@
-import React, { useContext, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle, faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import myContext from '../../../context/data/myContext';
+// // import React, { useContext, useState } from 'react';
+// // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// // import { faGoogle, faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
+// // import myContext from '../../../context/data/myContext';
+// // import {
+// //     Card,
+// //     CardHeader,
+// //     CardBody,
+// //     Input,
+// //     Button,
+// //     Typography,
+// // } from "@material-tailwind/react";
+// // import { useNavigate } from "react-router";
+// // import toast from "react-hot-toast";
+// // import { signInWithEmailAndPassword } from "firebase/auth";
+// // import { auth } from "../../../firebase/FirebaseConfig";
+
+// // export default function AdminLogin() {
+// //     const context = useContext(myContext);
+// //     const { mode } = context;
+// //     const navigate = useNavigate();
+
+// //     const [email, setEmail] = useState('');
+// //     const [password, setPassword] = useState('');
+// //     const [error, setError] = useState('');
+
+// //     //* Login Function
+// //     const login = async () => {
+// //         if (!email || !password) {
+// //             return toast.error("Fill all required fields");
+// //         }
+// //         try {
+// //             const result = await signInWithEmailAndPassword(auth, email, password);
+// //             toast.success('Login Success');
+// //             localStorage.setItem('admin', JSON.stringify(result));
+// //             navigate('/dashboard');
+// //         } catch (error) {
+// //             toast.error('Login Failed');
+// //             console.log(error);
+// //         }
+// //     };
+
+// //     const handleSubmit = (e) => {
+// //         e.preventDefault();
+// //         setError('');
+// //         login();
+// //     };
+
+// //     return (
+// //         <div
+// //             className="flex items-center justify-center min-h-screen"
+// //             style={{
+// //                 backgroundImage: "url('https://mailrelay.com/wp-content/uploads/2018/03/que-es-un-blog-1.png')",
+// //                 backgroundSize: 'cover',
+// //                 backgroundPosition: 'center',
+// //             }}
+// //         >
+// //             <Card
+// //                 className="w-full max-w-[24rem] bg-opacity-90"
+// //                 style={{
+// //                     backgroundColor: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)',
+// //                 }}
+// //             >
+// //                 <CardHeader
+// //                     floated={false}
+// //                     shadow={false}
+// //                     className="m-0 grid place-items-center rounded-b-none py-8 px-4 text-center"
+// //                     style={{
+// //                         backgroundColor: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
+// //                     }}
+// //                 >
+// //                     <div className="flex justify-center space-x-4 text-white">
+// //                         <a href="#"><FontAwesomeIcon icon={faGoogle} size="2x" /></a>
+// //                         <a href="#"><FontAwesomeIcon icon={faFacebookF} size="2x" /></a>
+// //                         <a href="#"><FontAwesomeIcon icon={faTwitter} size="2x" /></a>
+// //                     </div>
+// //                     <Typography variant="h4" color="white" className="mt-4">Admin Login</Typography>
+// //                     <Typography variant="body2" color="white">Imagine, Explore, Create</Typography>
+// //                 </CardHeader>
+
+// //                 <CardBody>
+// //                     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+// //                         {error && <Typography color="red" className="text-center">{error}</Typography>}
+// //                         <Input
+// //                             type="email"
+// //                             placeholder="Email"
+// //                             value={email}
+// //                             onChange={(e) => setEmail(e.target.value)}
+// //                             className="bg-teal-800 text-white placeholder-gray-300 p-2 rounded"
+// //                             required
+// //                         />
+// //                         <Input
+// //                             type="password"
+// //                             placeholder="Password"
+// //                             value={password}
+// //                             onChange={(e) => setPassword(e.target.value)}
+// //                             className="bg-teal-800 text-white placeholder-gray-300 p-2 rounded"
+// //                             required
+// //                         />
+// //                         <Button
+// //                             type="submit"
+// //                             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded"
+// //                             onClick={login}
+// //                             style={{
+// //                                 backgroundColor: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
+// //                                 color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)'
+// //                             }}
+// //                         >
+// //                             Login
+// //                         </Button>
+// //                     </form>
+// //                 </CardBody>
+// //             </Card>
+// //         </div>
+// //     );
+// // }
+
+
+// import React, { useContext, useState } from "react";
+// import {
+//     Card,
+//     CardHeader,
+//     CardBody,
+//     Input,
+//     Button,
+//     Typography,
+// } from "@material-tailwind/react";
+// import myContext from "../../../context/data/myContext";
+// import { useNavigate } from "react-router";
+// import toast from "react-hot-toast";
+// import { signInWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../../../firebase/FirebaseConfig";
+
+// export default function AdminLogin() {
+//     const context = useContext(myContext);
+//     const { mode } = context;
+
+//     const navigate = useNavigate();
+
+//     const [email, setEmail] = useState('');
+//     const [password, setPassword] = useState('');
+//     const [error, setError] = useState('');
+
+//     //* Login Function
+//     const login = async () => {
+//         if (!email || !password) {
+//             return toast.error("Fill all required fields");
+//         }
+//         try {
+//             const result = await signInWithEmailAndPassword(auth, email, password);
+//             toast.success('Login Success');
+//             localStorage.setItem('admin', JSON.stringify(result));
+//             navigate('/dashboard');
+//         } catch (error) {
+//             toast.error('Login Failed');
+//             console.log(error);
+//         }
+//     };
+
+//     return (
+//         <div
+//             className="flex items-center justify-center min-h-screen"
+//             style={{
+//                 backgroundImage: "url('https://mailrelay.com/wp-content/uploads/2018/03/que-es-un-blog-1.png')",
+//                 backgroundSize: 'cover',
+//                 backgroundPosition: 'center',
+//             }}
+//         >
+//             {/* Card */}
+//             <Card
+//                 className="w-full max-w-[24rem] bg-opacity-90"
+//                 style={{
+//                     backgroundColor: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)',
+//                 }}
+//             >
+//                 {/* CardHeader */}
+//                 <CardHeader
+//                     floated={false}
+//                     shadow={false}
+//                     className="m-0 grid place-items-center rounded-b-none py-8 px-4 text-center"
+//                     style={{
+//                         backgroundColor: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
+//                     }}
+//                 >
+//                     <div className="flex justify-center mb-4 space-x-4 text-white">
+//                         <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/727/727399.png" alt="Icon" className="h-12 w-12" /></a>
+//                     </div>
+//                     <Typography variant="h4" style={{ color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)' }}>
+//                         Admin Login
+//                     </Typography>
+//                     <Typography variant="body2" style={{ color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)' }}>
+//                         Imagine, Explore, Create
+//                     </Typography>
+//                 </CardHeader>
+
+//                 {/* CardBody */}
+//                 <CardBody>
+//                     <form className="flex flex-col gap-4" onSubmit={(e) => { e.preventDefault(); login(); }}>
+//                         {error && <Typography color="red" className="text-center">{error}</Typography>}
+//                         <Input
+//                             type="email"
+//                             placeholder="Email"
+//                             value={email}
+//                             onChange={(e) => setEmail(e.target.value)}
+//                             className="bg-teal-800 text-white placeholder-gray-300 p-2 rounded"
+//                             required
+//                         />
+//                         <Input
+//                             type="password"
+//                             placeholder="Password"
+//                             value={password}
+//                             onChange={(e) => setPassword(e.target.value)}
+//                             className="bg-teal-800 text-white placeholder-gray-300 p-2 rounded"
+//                             required
+//                         />
+//                         <Button
+//                         onClick={login}
+//                             type="submit"
+//                             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded"
+//                             style={{
+//                                 backgroundColor: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
+//                                 color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)'
+//                             }}
+//                         >
+//                             Login
+//                         </Button>
+//                     </form>
+//                 </CardBody>
+//             </Card>
+//         </div>
+//     );
+// }
+
+import React, { useContext, useState } from "react";
 import {
     Card,
     CardHeader,
@@ -10,6 +240,7 @@ import {
     Button,
     Typography,
 } from "@material-tailwind/react";
+import myContext from "../../../context/data/myContext";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -33,17 +264,12 @@ export default function AdminLogin() {
             const result = await signInWithEmailAndPassword(auth, email, password);
             toast.success('Login Success');
             localStorage.setItem('admin', JSON.stringify(result));
-            navigate('/dashboard');
+            console.log("Navigating to dashboard");  // Logging the navigation step
+            navigate('/dashboard');  // Ensuring navigation happens after successful login
         } catch (error) {
             toast.error('Login Failed');
             console.log(error);
         }
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setError('');
-        login();
     };
 
     return (
@@ -69,17 +295,19 @@ export default function AdminLogin() {
                         backgroundColor: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
                     }}
                 >
-                    <div className="flex justify-center space-x-4 text-white">
-                        <a href="#"><FontAwesomeIcon icon={faGoogle} size="2x" /></a>
-                        <a href="#"><FontAwesomeIcon icon={faFacebookF} size="2x" /></a>
-                        <a href="#"><FontAwesomeIcon icon={faTwitter} size="2x" /></a>
+                    <div className="flex justify-center mb-4 space-x-4 text-white">
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/727/727399.png" alt="Icon" className="h-12 w-12" /></a>
                     </div>
-                    <Typography variant="h4" color="white" className="mt-4">Admin Login</Typography>
-                    <Typography variant="body2" color="white">Imagine, Explore, Create</Typography>
+                    <Typography variant="h4" style={{ color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)' }}>
+                        Admin Login
+                    </Typography>
+                    <Typography variant="body2" style={{ color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)' }}>
+                        Imagine, Explore, Create
+                    </Typography>
                 </CardHeader>
 
                 <CardBody>
-                    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                    <form className="flex flex-col gap-4" onSubmit={(e) => { e.preventDefault(); login(); }}>
                         {error && <Typography color="red" className="text-center">{error}</Typography>}
                         <Input
                             type="email"
@@ -100,7 +328,6 @@ export default function AdminLogin() {
                         <Button
                             type="submit"
                             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded"
-                            onClick={login}
                             style={{
                                 backgroundColor: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
                                 color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)'
@@ -114,6 +341,7 @@ export default function AdminLogin() {
         </div>
     );
 }
+
 
 
 
