@@ -1,111 +1,9 @@
-// import React, { useContext, useState } from 'react';
-// import {
-//     Card,
-//     CardHeader,
-//     CardBody,
-//     Input,
-//     Button,
-//     Typography,
-// } from '@material-tailwind/react';
-// import myContext from '../../../context/data/myContext';
-
-// export default function AdminLogin() {
-//     const context = useContext(myContext);
-//     const { mode } = context;
-
-//     // State for email, password, and error handling
-//     const [email, setEmail] = useState('');
-//     const [password, setPassword] = useState('');
-//     const [error, setError] = useState('');
-
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         setError(''); // Clear previous errors
-
-//         if (!email || !password) {
-//             setError('Both fields are required.');
-//             return;
-//         }
-
-//         console.log('Logging in with:', { email, password });
-//         // Add login logic here
-//     };
-
-//     return (
-//         <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
-//             {/* Login Card */}
-//             <Card
-//                 className="w-full max-w-[24rem]"
-//                 style={{
-//                     background: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)',
-//                 }}
-//             >
-//                 {/* Card Header */}
-//                 <CardHeader
-//                     color="blue"
-//                     floated={false}
-//                     shadow={false}
-//                     className="m-0 grid place-items-center rounded-b-none py-8 px-4 text-center"
-//                     style={{
-//                         background: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
-//                     }}
-//                 >
-//                     <div className="mb-4 rounded-full border border-white/10 bg-white/10 p-2">
-//                         <img
-//                             src="https://cdn-icons-png.flaticon.com/128/727/727399.png"
-//                             className="h-20 w-20"
-//                             alt="Admin Icon"
-//                         />
-//                     </div>
-//                     <Typography
-//                         variant="h4"
-//                         style={{
-//                             color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)',
-//                         }}
-//                     >
-//                         Admin Login
-//                     </Typography>
-//                 </CardHeader>
-
-//                 {/* Card Body */}
-//                 <CardBody>
-//                     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-//                         {error && <div className="text-red-500">{error}</div>}
-//                         <Input
-//                             type="email"
-//                             placeholder="Email"
-//                             value={email}
-//                             onChange={(e) => setEmail(e.target.value)}
-//                             required
-//                         />
-//                         <Input
-//                             type="password"
-//                             placeholder="Password"
-//                             value={password}
-//                             onChange={(e) => setPassword(e.target.value)}
-//                             required
-//                         />
-//                         <Button
-//                             type="submit"
-//                             style={{
-//                                 background: mode === 'dark' ? 'rgb(226, 232, 240)' : 'rgb(30, 41, 59)',
-//                                 color: mode === 'dark' ? 'rgb(30, 41, 59)' : 'rgb(226, 232, 240)',
-//                             }}
-//                         >
-//                             Login
-//                         </Button>
-//                     </form>
-//                 </CardBody>
-//             </Card>
-//         </div>
-//     );
-// }
 import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import myContext from '../../../context/data/myContext';
 
-const UserProfileWithLogin = () => {
+const adminlogin = () => {
     const context = useContext(myContext);
     const { mode } = context;
 
@@ -185,4 +83,4 @@ const UserProfileWithLogin = () => {
     );
 };
 
-export default UserProfileWithLogin;
+export default adminlogin;
