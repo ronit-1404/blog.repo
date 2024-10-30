@@ -18,9 +18,12 @@ export default function Nav() {
 
     const context = useContext(myContext);
     const { mode, toggleMode } = context;
+    
+    //* Admin
+    const admin = localStorage.getItem('admin');
 
 
-    // All NavList 
+    //* All NavList 
     const navList = (
         <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
             <Typography
@@ -45,17 +48,22 @@ export default function Nav() {
                     Blogs
                 </Link>
             </Typography>
-            <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-normal"
-                style={{ color: mode === 'dark' ? 'white' : 'white' }}
-            >
-                <Link to={'/adminlogin'} className="flex items-center">
-                    Admin Login
-                </Link>
-            </Typography>
+            {!admin
+                ?
+                <Typography
+                    as="li"
+                    variant="small"
+                    color="blue-gray"
+                    className="p-1 font-normal"
+                    style={{ color: mode === 'dark' ? 'white' : 'white' }}
+                >
+                    <Link to={'/adminlogin'} className="flex items-center">
+                        Admin Login
+                    </Link>
+                </Typography>
+                :
+                ""
+            }
         </ul>
     );
 
@@ -83,7 +91,7 @@ export default function Nav() {
                             />
                             {/* Logo Text  */}
                             <span>
-                                QUICKBLOG
+                                Devknus
                             </span>
                         </Typography>
                     </Link>
@@ -99,13 +107,13 @@ export default function Nav() {
                         {/* Search Icon */}
                         <div>
                             {/* <AiOutlineSearch size={20} color="white" /> */}
-                            <SearchDialog/>
+                            <SearchDialog />
                         </div>
 
                         {/* Share Icon */}
                         <div className="hidden lg:block">
                             {/* <AiOutlineShareAlt size={20} color="white" /> */}
-                            <ShareDialogBox/>
+                            <ShareDialogBox />
                         </div>
 
                         {/* Admin Profile Pic */}
