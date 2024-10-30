@@ -63,7 +63,9 @@ function App() {
           <Route path="/allblogs" element={<AllBlogs />} />
           <Route path="/bloginfo/:id" element={<BlogInfo />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
-          <Route path="/dashboard" element={<Dashboard />
+          <Route path="/dashboard" element={<ProtectedRouteForAdmin>
+              <Dashboard />
+            </ProtectedRouteForAdmin>
           } />
           <Route path="/createblog" element={
             <ProtectedRouteForAdmin>
@@ -80,9 +82,10 @@ function App() {
 
 export default App;
 
+
 export const ProtectedRouteForAdmin = ({ children }) => {
   const admin = JSON.parse(localStorage.getItem('admin'))
-  if (admin?.user?.email === "testuser@gmail.com") {
+  if (admin?.user?.email === "ronitdhase1@gmail.com") {
     return children;
   } else {
     return <Navigate to="/dashboard" />;
