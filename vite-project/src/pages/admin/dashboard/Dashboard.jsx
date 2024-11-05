@@ -55,7 +55,7 @@ function Dashboard() {
                                     </Button>
                                 </div>
                             </Link>
-                            <div className="mb-2">
+                            {/* <div className="mb-2">
                                 <Button
                                     style={{
                                         background: mode === 'dark'
@@ -66,10 +66,10 @@ function Dashboard() {
                                             : 'white'
                                     }}
                                     className='px-8 py-2'
-                                >
+                                
                                     Logout
                                 </Button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
